@@ -1,0 +1,17 @@
+<div class="flex-center">
+    <form #userData="ngForm" (ngSubmit)="onSubmit(userData)">
+        <label class="my-2">Title:</label>
+        <input type="text" name="title" ngModel required class="form-control">
+        <label class="my-2">Content:</label>
+        <textarea rows="3" class="form-control" ngModel required name="content"></textarea>
+        <button class="btn btn-primary my-2" type="submit">Save to DB</button>
+    </form>
+    <button class="btn btn-primary" (click)="onFetch()">Fetch Posts</button>
+    <button class="btn btn-danger ml-2" (click)="onClear()">Clear Posts</button>
+    <div *ngFor="let list of dataArray">
+        <li class="list-group my-4" *ngIf="isFetch">
+            <p>Title:{{list.title}}</p>
+            <p>Content:{{list.content}}</p>
+        </li>
+    </div>
+</div>

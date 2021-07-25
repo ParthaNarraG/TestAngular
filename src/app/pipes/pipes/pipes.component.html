@@ -1,0 +1,34 @@
+<!-- <div class="flex-center">
+    <input type="text" [(ngModel)]="passString" class="form-control">
+    <button class="btn btn-primary mt-2" (click)="addServer()">Add Server</button>
+    <hr/>
+    <h1>AppStatus :{{appStatus | async}}</h1>
+    <div class="pipes" *ngFor="let server of serverDetails | customPipe:passString:'serverStatus'" [ngStyle]="{'background':server.background,'color':server.color}">
+        <p>
+            <span>{{server.serverName}}</span>
+            <span>{{server.serverStatus}}</span>
+            <span>{{server.serverInstanceType | uppercase}}</span>
+            <span>{{server.date | date:'fullDate'}}</span>
+        </p>
+    </div>
+</div> -->
+
+<!-- chaining pipes
+<span>{{server.date | date:'fullDate' | uppercase}}</span> -->
+
+<!-- Assignment Pipe -->
+<div class="flex-center">
+    <input type="text" [(ngModel)]="passString" class="form-control">
+    <button class="btn btn-primary mt-2" (click)="addServer()">Add Server</button>
+    <hr/>
+    <h1>AppStatus :{{appStatus | async}}</h1>
+    <div class="pipes" *ngFor="let server of serverDetails" [ngStyle]="{'background':server.background,'color':server.color}">
+        <p>
+            <span>{{server.serverName | reversePipe}}</span>
+            <span>{{server.serverStatus}}</span>
+            <span>{{server.serverInstanceType | uppercase}}</span>
+            <span>{{server.date | date:'fullDate'}}</span>
+        </p>
+    </div>
+</div>
+

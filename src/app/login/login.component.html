@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div class="login-wrapper">
+        <div class="compressed-wrapper">
+            <input type="text" class="form-control my-2" placeholder="USERNAME" #userName>
+            <input type="password" class="form-control my-2" placeholder="PASSWORD" #password>
+            <button class="btn btn-primary" (click)="validateCredentials(userName.value,password.value)">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<input type="text" class="form-control" id="newInput" #newItem>
+<button class="btn btn-primary" (click)="sendData(newItem.value)">Send Details</button>
+<p appbasicHighlight>Color Me</p>
+<p appRendererDirective>Color Me</p>
+<p *appOwnStructuralDirective="1<5">Show Me</p>
+<p routerLink="/tabs">Tabular Component</p>
+<p><a [routerLink]="['/users']">Click me to disappear</a></p>
+<!-- <a routerLink="../test" routerLinkActive="active">Reload Page</a> -->
+<a (click)="navigate()">Reload Page</a>
+<div [ngSwitch]="value">
+<p *ngSwitchCase="2">Hi</p>
+<p *ngSwitchCase="3">Bye</p>
+<p *ngSwitchCase="4">Right</p>
+<p *ngSwitchDefault>Left</p>
+<router-outlet></router-outlet>
+</div>

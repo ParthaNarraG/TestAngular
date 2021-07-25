@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+
+*{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+
+.flex-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+}

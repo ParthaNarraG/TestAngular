@@ -1,0 +1,45 @@
+<!-- <div>
+    <div class="flex-center">
+        <form (ngSubmit)="onSubmit()" #ngForm="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" placeholder="username" ngModel name="username" required>
+                <label for="password mt-4">Password</label>
+                <input type="passwordtext" class="form-control" placeholder="password" ngModel name="password" required>
+                <textarea name="reply" rows="3" class="form-control mt-4" [ngModel]="answer"></textarea>
+                <p>Reply : {{answer}}</p>
+                <button class="btn btn-primary form-control mt-4" 
+                type="submit"
+                [disabled]="!ngForm.valid">Save</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<!-- //Read this before starting app-template-driven -->
+
+<!-- //ngModelGroup
+//ng-invalid.ng-touched
+//[ngModel]="hard code a string" ([ngModel])="answer"--Two way data Binding
+//ngForm
+//Patch Value
+
+//Assignment Solution -->
+
+<div class="flex-center">
+    <form (ngSubmit)="onSubmit(formData)" #formData=ngForm>
+        <div class="form-group">
+            <input type="email" class="form-control" ngModel name="email" required email>
+            <select class="form-control"
+                name="subscription" ngModel>
+                <option *ngFor="let subscribe of subscriptions;let i=index"
+                [value]="subscribe">{{subscribe}}</option>
+            </select>
+            <input type="password" class="form-control" ngModel name="password" required>
+            <button class="btn btn-primary form-control" type="submit"
+            [disabled]="!formData.valid">Submit</button>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)="settingValue()">Click to set Default Values</button>
+    </form>
+</div>
+

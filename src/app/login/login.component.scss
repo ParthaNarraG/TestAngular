@@ -1,0 +1,25 @@
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-wrapper{
+        height: 400px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #DCDCDC;
+        .compressed-wrapper{
+            height: 200px;
+            width: 200px;
+            button{
+                margin: 0 auto;
+                position: relative;
+                top: 10%;
+                left: 25%;
+            }
+        }
+    }
+}

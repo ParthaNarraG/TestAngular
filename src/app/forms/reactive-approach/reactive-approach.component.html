@@ -1,0 +1,28 @@
+<div class="flex-center">
+    <!-- Reactive Approach -->
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+            <label class="my-3">Name</label>
+            <input type="text" class="form-control" placeholder="UserName" formControlName="userName">
+            <p class="my-2" *ngIf="!signupForm.get('userData.userName').valid && signupForm.get('userData.userName').touched">
+                Enter Valid User Name</p>
+            <label class="my-3">Email:</label>
+            <input type="email" class="form-control mb-2" placeholder="Email" formControlName="email">
+        </div>
+        <div *ngFor="let list of genderType">
+            <label>
+                <input type="radio" [value]="list" formControlName="gender">{{list}}
+            </label>
+        </div>
+        <!-- Form Array -->
+        <div formArrayName="hobbies">
+            <p>Hobbies</p>
+            <button (click)="addHobby()" type="button" class="form-control">Add</button>
+            <div *ngFor="let hobby of getControls();index as i">
+                <input type="text" class="form-control" [formControlName]="i">
+            </div>
+        </div>
+        <button class="btn btn-primary form-control my-3" type="submit"
+        [disabled]="!signupForm.valid">Submit</button>
+    </form>
+</div>

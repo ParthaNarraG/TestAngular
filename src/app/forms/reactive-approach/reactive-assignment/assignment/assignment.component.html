@@ -1,0 +1,13 @@
+<div class="flex-center">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <label class="my-4">Project Name:</label>
+        <input type="text" class="form-control" formControlName="projectName">
+        <label class="my-4">Mail:</label>
+        <input type="text" class="form-control" formControlName="mail">
+        <label class="my-4">ProjectStatus:  </label>
+        <select formControlName="projectStatus" [value]="defaultProperty">
+                <option *ngFor="let status of projectStatus" [value]="status">{{status}}</option>
+        </select>
+        <button class="btn btn-success form-control" type="submit">Submit</button>
+    </form>
+</div>
